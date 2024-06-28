@@ -1,0 +1,18 @@
+[package]
+name = "cargo-toolchainer"
+version = "0.1.0"
+authors = ["Nathan Frasier <nathanfrasier.nf@gmail.com>"]
+edition = "2021"
+rust-version = "1.74.1"
+description = "A simple cli tool for automatically updating your rust-toolchain.toml file"
+repository = "https://github.com/NathanFrasier/cargo-toolchainer"
+license = "MIT OR Apache-2.0"
+keywords = ["cli", "subcommand" ]
+categories = ["development-tools::cargo-plugins", "development-tools::build-utils"]
+
+[dependencies]
+clap = { version = "4.5.8", features = ["derive"] }
+toml = "0.8.14"
+serde = "1.0"
+reqwest = { version = "0.12", features = ["blocking"] }
+regex = "1.10"
