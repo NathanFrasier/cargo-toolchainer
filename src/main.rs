@@ -2,7 +2,7 @@
 #![forbid(unsafe_code)]
 #![deny(missing_docs, clippy::missing_errors_doc, clippy::missing_panics_doc)]
 
-use clap::{Parser, Subcommand};
+use clap::{Parser, Subcommand, Args};
 
 use cli::*;
 
@@ -11,6 +11,14 @@ mod update_channel;
 mod utils;
 
 #[derive(Parser)]
+#[command(name = "cargo")]
+#[command(bin_name = "cargo")]
+enum CargoCli {
+    Toolchainer(Cli)
+}
+
+
+#[derive(Args)]
 #[command(version, about, long_about = None)]
 #[command(propagate_version = true)]
 struct Cli {
@@ -24,7 +32,7 @@ enum Commands {
 }
 
 fn main() {
-    let cli = Cli::parse();
+    let CargoCli::Toolchainer(cli) = CargoCli::parse();
     match cli.command {
         Commands::Update(args) => update(args),
     }
@@ -36,6 +44,6 @@ mod tests {
     #[test]
     fn verify_cli() {
         use clap::CommandFactory;
-        Cli::command().debug_assert();
+        CargoCli::command().debug_assert();
     }
 }
