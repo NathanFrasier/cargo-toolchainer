@@ -1,6 +1,8 @@
 # cargo-toolchainer
 
-TODO Badges
+[<img alt="Crates.io Version" src="https://img.shields.io/crates/v/cargo-toolchainer">](https://crates.io/crates/cargo-toolchainer)
+<img alt="Crates.io MSRV" src="https://img.shields.io/crates/msrv/cargo-toolchainer">
+[<img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/NathanFrasier/cargo-toolchainer/ci.yaml">](https://github.com/NathanFrasier/cargo-toolchainer/actions/workflows/ci.yaml?query=branch%3Amain)
 
 cargo-toolchainer is a simple CLI tool to update the channel in your rust-toolchain.toml file.
 
